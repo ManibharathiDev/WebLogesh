@@ -55,8 +55,74 @@
         //$sum = $sum + $arr[$i];
         $sum += $arr[$i];
     }
-    echo "The sum is => ".$sum;
+    //echo "The sum is => ".$sum;
 
+    // Associative Array 
+    // Key instead of Index
+    //Syntax
+    //array("key1"=>"value","key2"=>"value2"...."keyn"=>"valueN");
+
+    // $myData = array("name"=>"Logesh","age"=>25,"dept"=>"MCA",
+    // "address"=>array(
+    //     "street"=>"First Cross Street",
+    //     "door no."=>28,
+    //     "floor"=>"First Floor",
+    // ),
+    // "Living History"=>array("First Country"=>"USA","Second Country"=>"INDIA"),
+    // );
+
+    $myAddress = array(
+             "street"=>"First Cross Street",
+             "doorno"=>array("First"=>2,"second"=>3),
+            "floor"=>"First Floor",
+    );
+
+    $livingCountry = array("First Country"=>"USA","Second Country"=>"INDIA");
+    $myData = array("name"=>"Logesh","age"=>25,"dept"=>"MCA",
+    "address"=>$myAddress,
+    "livingCountry"=>$livingCountry
+);
+    //echo $myData['name'];
+    //echo $myData['age'];
+    //echo $myData['dept'];
+
+     //print_r($myData['livingCountry']);   
+     //$address = $myData['address'];
+     //print_r($myData['address']['doorno']['second']);
+    //echo json_encode($address);
+
+   // echo json_decode(json_encode($myData));
+
+   // Multi Dimensional Array
+   // Array, it is consist of multiple array
+
+   // array(
+//         array(),
+//         array(),
+//         array(),
+//    )
+
+$multiDimen = array (
+    "Subject" => array(
+        "First Sub"=>"Tamil",
+        "Second Sub"=>"English",
+        "Third Sub"=>"Maths",
+    ),
+    "Department"=>array(
+        "Main Dept"=>"MCA",
+        "Elective"=>"BCA"
+    ),
+    "Grade"=>array(
+        "First Grade"=>"A+",
+        "Second Grade"=>"A",
+        "Third Grade"=>"B+"
+    )
+
+    );
+
+    echo json_encode($multiDimen);
+
+   
     
 
 ?>
