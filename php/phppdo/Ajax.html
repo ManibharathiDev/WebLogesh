@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ajax Page</title>
+    </head>
+    <body>
+        <input type="button" id="getData" value="Get Data"/>
+        <script src="jquery.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $('#getData').click(function(){
+                $(document).ready(function(){
+                $.ajax({
+                    url:'JsonRetrive.php',
+                    type:'POST',
+                    dataType:'JSON',
+                    success:function(data){
+                        console.log(data);
+                        $.each(data.data,function(index){
+                            console.log(data.data[index].id);
+                        });
+                    }
+                })
+                })
+            });
+        </script>
+    </body>
+</html>
