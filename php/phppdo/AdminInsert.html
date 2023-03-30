@@ -5,13 +5,43 @@
     </head>
     <body>
         <h2>Registration</h2>
-        <form action="DBInsert.php" method="post">
+        <form id="onInsert">
             <label>User Name</label><br/>
-            <input type="text" name="uname"/>
+            <input type="text" name="uname" id="uname"/>
             <br/>
             <label>Password</label><br/>
-            <input type="password" name="pword"/>
+            <input type="password" name="pword" id="pword"/>
             <input type="submit" value="Register"/>
         </form>
+        <script src="JScript.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#onInsert').submit(function(e){
+                    e.preventDefault();
+                    var form = new FormData(this);
+                    // form.append("uname","admin123");
+                    // form.append("pword","123456");
+                    $.ajax({
+                        'url':'DbInsert.php',
+                        'type':'POST',
+                        'data':form,
+                        processData: false,
+                        contentType: false,
+                        dataType:'JSON',
+                        success:function(response)
+                        {
+                            if(response.success == 1)
+                                alert("Db Inserted");
+                            else
+                                alert("Db Insertion Error");    
+                    
+                        }
+                        
+                        });
+
+                  
+                })
+            });
+        </script>
     </body>
 </html>
