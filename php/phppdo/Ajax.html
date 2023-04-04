@@ -15,6 +15,7 @@
                     dataType:'JSON',
                     success:function(data){
                         console.log(data);
+                        
                         $.each(data.data,function(index){
                             console.log(data.data[index].id);
                         });
