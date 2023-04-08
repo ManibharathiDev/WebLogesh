@@ -175,6 +175,13 @@
                     //     });
                     // });
 
+                    let id = 2;
+                    $(document).on('click','#name-'+id,function(){
+                        alert("good");
+                        let ids = 'name-'+id;
+                        $('#'+ids).html("Good Morning");
+                    });
+
                     function getData(){
                         $.ajax({
                         'url':'JsonDemo.php',
@@ -192,14 +199,16 @@
 
                                 $.each(myData,function(index){
                                     $i++;
+                                    let myNameId = "name-"+myData[index].id;
+                                    let myPassId = "pass-"+myData[index].id;
                                     let myValue = "<tr id='"+myData[index].id+"'>";
                                     myValue +="<td>";
                                     myValue += $i;
                                     myValue +="</td>";
-                                    myValue +="<td id='tname-'"+myData[index].id+">";
+                                    myValue +="<td id='"+myNameId+"'>";
                                     myValue += myData[index].username;
                                     myValue +="</td>";
-                                    myValue +="<td>";
+                                    myValue +="<td id='"+myPassId+"'>";
                                     myValue += myData[index].password;
                                     myValue +="</td>";
                                     myValue +="<td>";
