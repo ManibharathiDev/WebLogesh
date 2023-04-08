@@ -179,7 +179,9 @@
                     $(document).on('click','#name-'+id,function(){
                         alert("good");
                         let ids = 'name-'+id;
-                        $('#'+ids).html("Good Morning");
+                        $('#'+ids).html
+                        
+                        ("Good Morning");
                     });
 
                     function getData(){
